@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/ui_gap"
+    card_view:cardCornerRadius="@dimen/ui_radius"
+    card_view:cardElevation="4dp"
+    card_view:cardBackgroundColor="@color/ui_white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/ui_padding">
+
+        <ImageView
+            android:id="@+id/imgRes"
+            android:layout_width="@dimen/ui_img_card"
+            android:layout_height="@dimen/ui_img_card"
+            android:scaleType="centerCrop" />
+
+        <Space
+            android:layout_width="@dimen/ui_gap"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvTit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/UiSubtitle" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="6dp" />
+
+            <TextView
+                android:id="@+id/tvDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                style="@style/UiBody" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="6dp" />
+
+            <TextView
+                android:id="@+id/tvTipo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ui_primary"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
