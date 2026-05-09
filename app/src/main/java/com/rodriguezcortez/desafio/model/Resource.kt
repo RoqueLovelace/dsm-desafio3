@@ -8,7 +8,7 @@ data class Resource(
     val enlace: String = "",
     val imagen: String = "",
     val autor: String = "",
-    val release_date: Long = 0,
+    val release_date: String = "",
     val category: String = "",
     val rating: Int = 0
 )
