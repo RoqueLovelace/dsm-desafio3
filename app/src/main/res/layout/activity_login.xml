@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ui_bg"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/ui_padding">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tit_login"
+        style="@style/UiTitle" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ui_gap_big" />
+
+    <EditText
+        android:id="@+id/etMail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_mail" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ui_gap" />
+
+    <EditText
+        android:id="@+id/etPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_pass"
+        android:inputType="textPassword" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ui_gap_big" />
+
+    <Button
+        android:id="@+id/btnLogi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_logi"
+        style="@style/UiButton" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ui_gap" />
+
+    <Button
+        android:id="@+id/btnRegi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_regi"
+        style="@style/UiButtonAlt" />
+
+</LinearLayout>

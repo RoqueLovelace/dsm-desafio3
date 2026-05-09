@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">AprendeApp</string>
+
+    <string name="tit_login">Iniciar sesión</string>
+    <string name="tit_regi">Registro</string>
+    <string name="tit_main">Recursos</string>
+
+    <string name="hint_mail">Correo</string>
+    <string name="hint_pass">Contraseña</string>
+    <string name="hint_name">Nombre</string>
+
+    <string name="btn_logi">Ingresar</string>
+    <string name="btn_regi">Registrarse</string>
+    <string name="btn_cerr">Cerrar sesión</string>
+
+    <string name="msg_error">Error inesperado</string>
+    <string name="msg_login_error">Credenciales inválidas</string>
 </resources>
