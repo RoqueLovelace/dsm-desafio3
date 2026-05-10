@@ -29,6 +29,7 @@ class LoginActivity : AppCompatActivity() {
         if (sess.isLogin()) {
             startActivity(Intent(this, MainActivity::class.java))
             finish()
+            return
         }
 
         setContentView(R.layout.activity_login)

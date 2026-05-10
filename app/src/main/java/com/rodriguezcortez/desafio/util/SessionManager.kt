@@ -1,26 +1,41 @@
 package com.rodriguezcortez.desafio.util
 
 import android.content.Context
+import android.content.SharedPreferences
 
 class SessionManager(context: Context) {
 
-    private val pref =
-        context.getSharedPreferences("session", Context.MODE_PRIVATE)
+    private val prefs: SharedPreferences =
+        context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
+
+    companion object {
+        private const val PREF_NAME   = "session"
+        private const val KEY_LOGIN   = "is_login"
+        private const val KEY_USER_ID = "user_id"
+        private const val KEY_NAME    = "name"
+        private const val KEY_ROL     = "rol"
+    }
 
     fun saveUser(id: String, name: String, rol: String) {
-        pref.edit()
-            .putString("id", id)
-            .putString("name", name)
-            .putString("rol", rol)
-            .putBoolean("isLogin", true)
-            .apply()
+        prefs.edit().apply {
+            putBoolean(KEY_LOGIN, true)
+            putString(KEY_USER_ID, id)
+            putString(KEY_NAME, name)
+            putString(KEY_ROL, rol)
+            apply()
+        }
     }
 
-    fun isLogin(): Boolean {
-        return pref.getBoolean("isLogin", false)
-    }
+    fun isLogin(): Boolean = prefs.getBoolean(KEY_LOGIN, false)
+
+    fun getUserId(): Int = prefs.getInt(KEY_USER_ID, -1)
+
+    fun getName(): String = prefs.getString(KEY_NAME, "") ?: ""
+
+    /** Devuelve el rol del usuario activo: "admin", "docente" o "estudiante" */
+    fun getRol(): String = prefs.getString(KEY_ROL, "estudiante") ?: "estudiante"
 
     fun logout() {
-        pref.edit().clear().apply()
+        prefs.edit().clear().apply()
     }
 }
