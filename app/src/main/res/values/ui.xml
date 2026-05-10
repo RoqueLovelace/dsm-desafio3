@@ -53,4 +53,10 @@
         <item name="android:textColor">@color/ui_white</item>
         <item name="android:minHeight">@dimen/ui_btn_height</item>
     </style>
+
+    <style name="UiLabel">
+        <item name="android:textSize">@dimen/ui_body</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/ui_muted</item>
+    </style>
 </resources>

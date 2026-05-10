@@ -32,8 +32,7 @@ class SessionManager(context: Context) {
 
     fun getName(): String = prefs.getString(KEY_NAME, "") ?: ""
 
-    /** Devuelve el rol del usuario activo: "admin", "docente" o "estudiante" */
-    fun getRol(): String = prefs.getString(KEY_ROL, "estudiante") ?: "estudiante"
+    fun getRol(): String = prefs.getString(KEY_ROL, "user") ?: "user"
 
     fun logout() {
         prefs.edit().clear().apply()

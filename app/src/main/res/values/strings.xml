@@ -1,18 +1,60 @@
 <resources>
-    <string name="app_name">AprendeApp</string>
+    <!-- ── App ──────────────────────────────────────────────────────────── -->
+    <string name="app_name">Desafío</string>
 
-    <string name="tit_login">Iniciar sesión</string>
-    <string name="tit_regi">Registro</string>
     <string name="tit_main">Recursos</string>
+    <string name="tit_login">Iniciar sesión</string>
+    <string name="tit_register">Registro</string>
+    <string name="tit_detail">Detalle</string>
+    <string name="tit_form_crear">Crear recurso</string>
+    <string name="tit_form_editar">Editar recurso</string>
 
-    <string name="hint_mail">Correo</string>
-    <string name="hint_pass">Contraseña</string>
-    <string name="hint_name">Nombre</string>
-
-    <string name="btn_logi">Ingresar</string>
-    <string name="btn_regi">Registrarse</string>
     <string name="btn_cerr">Cerrar sesión</string>
+    <string name="btn_crear">+ Crear recurso</string>
+    <string name="btn_abrir">Abrir enlace</string>
+    <string name="btn_editar">Editar</string>
+    <string name="btn_eliminar">Eliminar</string>
+    <string name="btn_guardar">Guardar</string>
+    <string name="btn_cancelar">Cancelar</string>
+    <string name="btn_login">Ingresar</string>
+    <string name="btn_register">Registrarse</string>
+    <string name="btn_regi">¿No tenés cuenta? Registrate</string>
+    <string name="btn_logi">¿Ya tenés cuenta? Ingresá</string>
 
-    <string name="msg_error">Error inesperado</string>
-    <string name="msg_login_error">Credenciales inválidas</string>
+    <string name="label_titulo">Título *</string>
+    <string name="label_desc">Descripción *</string>
+    <string name="label_tipo">Tipo *</string>
+    <string name="label_img">URL de imagen *</string>
+    <string name="label_link">URL del enlace *</string>
+    <string name="label_mail">Correo electrónico</string>
+    <string name="label_pass">Contraseña</string>
+
+    <string name="hint_titulo">Ej: Introducción a Android</string>
+    <string name="hint_desc">Descripción del recurso…</string>
+    <string name="hint_tipo">Ej: Video, Artículo, PDF…</string>
+    <string name="hint_img">https://ejemplo.com/imagen.jpg</string>
+    <string name="hint_link">https://ejemplo.com/recurso</string>
+    <string name="hint_mail">usuario@ejemplo.com</string>
+    <string name="hint_pass">Contraseña</string>
+
+    <!-- ── Mensajes de validación ────────────────────────────────────────── -->
+    <string name="val_required">Este campo es obligatorio</string>
+    <string name="val_mail_invalid">Ingresá un correo válido</string>
+    <string name="val_pass_short">La contraseña debe tener al menos 6 caracteres</string>
+
+    <string name="msg_login_error">Correo o contraseña incorrectos</string>
+    <string name="msg_error">Ocurrió un error. Intentá de nuevo</string>
+    <string name="msg_no_link">Este recurso no tiene enlace</string>
+    <string name="msg_create_ok">Recurso creado correctamente</string>
+    <string name="msg_update_ok">Recurso actualizado correctamente</string>
+    <string name="msg_del_ok">Recurso eliminado correctamente</string>
+
+    <string name="dialog_del_title">Eliminar recurso</string>
+    <string name="dialog_del_msg">¿Estás seguro de que querés eliminar este recurso? Esta acción no se puede deshacer.</string>
+    <string name="dialog_del_confirm">Eliminar</string>
+    <string name="dialog_del_cancel">Cancelar</string>
+
+    <string name="cd_img_detail">Imagen del recurso</string>
+    <string name="cd_img_card">Miniatura del recurso</string>
+
 </resources>

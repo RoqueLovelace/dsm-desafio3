@@ -7,6 +7,7 @@
     android:orientation="vertical"
     android:background="@color/ui_bg">
 
+    <!-- Barra superior: título + cerrar sesión -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,9 +30,21 @@
 
     </LinearLayout>
 
+    <!-- Botón Crear recurso (sólo visible para admin/docente, gestionado en código) -->
+    <Button
+        android:id="@+id/btnCrear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/ui_padding"
+        android:layout_marginEnd="@dimen/ui_padding"
+        android:layout_marginBottom="4dp"
+        android:text="@string/btn_crear"
+        android:visibility="gone"
+        style="@style/UiButton" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRes"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 </LinearLayout>

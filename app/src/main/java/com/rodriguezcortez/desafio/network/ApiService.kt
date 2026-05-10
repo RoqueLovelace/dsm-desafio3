@@ -22,8 +22,8 @@ interface ApiService {
     fun createResource(@Body resource: Resource): Call<Resource>
 
     @PUT("resources/{id}")
-    fun updateResource(@Path("id") id: Int, @Body resource: Resource): Call<Resource>
+    fun updateResource(@Path("id") id: String, @Body resource: Resource): Call<Resource>
 
     @DELETE("resources/{id}")
-    fun deleteResource(@Path("id") id: Int): Call<Void>
+    fun deleteResource(@Path("id") id: String): Call<Void>
 }

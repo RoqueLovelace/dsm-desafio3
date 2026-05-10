@@ -15,11 +15,10 @@
         android:id="@+id/imgDet"
         android:layout_width="match_parent"
         android:layout_height="220dp"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/cd_img_detail" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/ui_gap_big" />
+    <Space android:layout_width="match_parent" android:layout_height="@dimen/ui_gap" />
 
     <TextView
         android:id="@+id/tvTitDet"
@@ -27,9 +26,7 @@
         android:layout_height="wrap_content"
         style="@style/UiTitle" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/ui_gap" />
+    <Space android:layout_width="match_parent" android:layout_height="6dp" />
 
     <TextView
         android:id="@+id/tvTipoDet"
@@ -38,9 +35,7 @@
         android:textColor="@color/ui_primary"
         android:textStyle="bold" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/ui_gap_big" />
+    <Space android:layout_width="match_parent" android:layout_height="6dp" />
 
     <TextView
         android:id="@+id/tvDescDet"
@@ -48,16 +43,36 @@
         android:layout_height="wrap_content"
         style="@style/UiBody" />
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/ui_gap_big" />
+    <Space android:layout_width="match_parent" android:layout_height="@dimen/ui_gap" />
 
+    <!-- Botón siempre visible: abrir enlace -->
     <Button
         android:id="@+id/btnAbrir"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Abrir recurso"
+        android:text="@string/btn_abrir"
         style="@style/UiButton" />
+
+    <Space android:layout_width="match_parent" android:layout_height="8dp" />
+
+    <!-- Botones sólo visibles para admin/docente -->
+    <Button
+        android:id="@+id/btnEditar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_editar"
+        android:visibility="gone"
+        style="@style/UiButton" />
+
+    <Space android:layout_width="match_parent" android:layout_height="8dp" />
+
+    <Button
+        android:id="@+id/btnEliminar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_eliminar"
+        android:visibility="gone"
+        style="@style/UiButtonDanger" />
 
   </LinearLayout>
 
