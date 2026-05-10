@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     android:background="@color/ui_bg">
 
-    <!-- Barra superior: título + cerrar sesión -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,17 +31,65 @@
 
     </LinearLayout>
 
-    <!-- Botón Crear recurso (sólo visible para admin/docente, gestionado en código) -->
-    <Button
-        android:id="@+id/btnCrear"
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/ui_padding"
         android:layout_marginEnd="@dimen/ui_padding"
         android:layout_marginBottom="4dp"
-        android:text="@string/btn_crear"
-        android:visibility="gone"
-        style="@style/UiButton" />
+        app:queryHint="@string/hint_search"
+        app:iconifiedByDefault="false" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:paddingStart="@dimen/ui_padding"
+        android:paddingEnd="@dimen/ui_padding"
+        android:paddingBottom="4dp">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupTipos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleSelection="true"
+            app:selectionRequired="false">
+
+        </com.google.android.material.chip.ChipGroup>
+
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/ui_padding"
+        android:paddingEnd="@dimen/ui_padding"
+        android:paddingBottom="4dp">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipFavs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chip_favs"
+            app:chipIcon="@drawable/ic_fav_outline"
+            style="@style/Widget.MaterialComponents.Chip.Filter" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btnCrear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_crear"
+            android:visibility="gone"
+            style="@style/UiButton" />
+
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRes"

@@ -1,10 +1,10 @@
 package com.rodriguezcortez.desafio.view
 
 import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.RatingBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.rodriguezcortez.desafio.R
@@ -21,34 +21,37 @@ class ResourceFormActivity : AppCompatActivity() {
     private lateinit var etTipo: EditText
     private lateinit var etImg: EditText
     private lateinit var etLink: EditText
+    private lateinit var rbFormRating: RatingBar
     private lateinit var btnGuardar: Button
     private lateinit var btnCancelar: Button
 
     private var modo  = "crear"
-    private var resId = "-1"
+    private var resId = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_form_resource)
 
-        etTitulo   = findViewById(R.id.etTitulo)
-        etDesc     = findViewById(R.id.etDesc)
-        etTipo     = findViewById(R.id.etTipo)
-        etImg      = findViewById(R.id.etImg)
-        etLink     = findViewById(R.id.etLink)
+        etTitulo    = findViewById(R.id.etTitulo)
+        etDesc      = findViewById(R.id.etDesc)
+        etTipo      = findViewById(R.id.etTipo)
+        etImg       = findViewById(R.id.etImg)
+        etLink      = findViewById(R.id.etLink)
+        rbFormRating = findViewById(R.id.rbFormRating)
         btnGuardar  = findViewById(R.id.btnGuardar)
         btnCancelar = findViewById(R.id.btnCancelar)
 
         modo  = intent.getStringExtra("modo") ?: "crear"
-        resId = intent.getStringExtra("id") ?: "-1"
+        resId = intent.getIntExtra("id", -1)
 
         if (modo == "editar") {
             title = getString(R.string.tit_form_editar)
-            etTitulo.setText(intent.getStringExtra("titulo") ?: "")
-            etDesc.setText(intent.getStringExtra("desc")     ?: "")
-            etTipo.setText(intent.getStringExtra("tipo")     ?: "")
-            etImg.setText(intent.getStringExtra("img")       ?: "")
-            etLink.setText(intent.getStringExtra("link")     ?: "")
+            etTitulo.setText(intent.getStringExtra("titulo")  ?: "")
+            etDesc.setText(intent.getStringExtra("desc")      ?: "")
+            etTipo.setText(intent.getStringExtra("tipo")      ?: "")
+            etImg.setText(intent.getStringExtra("img")        ?: "")
+            etLink.setText(intent.getStringExtra("link")      ?: "")
+            rbFormRating.rating = intent.getFloatExtra("rating", 0f)
         } else {
             title = getString(R.string.tit_form_crear)
         }
@@ -63,6 +66,7 @@ class ResourceFormActivity : AppCompatActivity() {
         val tipo   = etTipo.text.toString().trim()
         val img    = etImg.text.toString().trim()
         val link   = etLink.text.toString().trim()
+        val rating = rbFormRating.rating
 
         if (titulo.isEmpty()) { etTitulo.error = getString(R.string.val_required); etTitulo.requestFocus(); return }
         if (desc.isEmpty())   { etDesc.error   = getString(R.string.val_required); etDesc.requestFocus();   return }
@@ -71,12 +75,13 @@ class ResourceFormActivity : AppCompatActivity() {
         if (link.isEmpty())   { etLink.error   = getString(R.string.val_required); etLink.requestFocus();   return }
 
         val recurso = Resource(
-            id          = if (resId != "-1") resId else "0",
+            id          = if (resId.toString() != "-1") resId.toString() else "0",
             titulo      = titulo,
             descripcion = desc,
             tipo        = tipo,
             imagen      = img,
-            enlace      = link
+            enlace      = link,
+            rating      = rating.toInt()
         )
 
         if (modo == "editar") actualizarRecurso(recurso) else crearRecurso(recurso)
@@ -100,7 +105,7 @@ class ResourceFormActivity : AppCompatActivity() {
     }
 
     private fun actualizarRecurso(recurso: Resource) {
-        RetrofitClient.api.updateResource(resId, recurso)
+        RetrofitClient.api.updateResource(resId.toString(), recurso)
             .enqueue(object : Callback<Resource> {
                 override fun onResponse(call: Call<Resource>, response: Response<Resource>) {
                     if (response.isSuccessful) {

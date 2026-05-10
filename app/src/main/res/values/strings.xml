@@ -1,6 +1,5 @@
 <resources>
-    <!-- ── App ──────────────────────────────────────────────────────────── -->
-    <string name="app_name">Desafío</string>
+    <string name="app_name">AprendeApp</string>
 
     <string name="tit_main">Recursos</string>
     <string name="tit_login">Iniciar sesión</string>
@@ -18,8 +17,8 @@
     <string name="btn_cancelar">Cancelar</string>
     <string name="btn_login">Ingresar</string>
     <string name="btn_register">Registrarse</string>
-    <string name="btn_regi">¿No tenés cuenta? Registrate</string>
-    <string name="btn_logi">¿Ya tenés cuenta? Ingresá</string>
+    <string name="btn_regi">Registrarse</string>
+    <string name="btn_logi">Ingresar</string>
 
     <string name="label_titulo">Título *</string>
     <string name="label_desc">Descripción *</string>
@@ -56,5 +55,25 @@
 
     <string name="cd_img_detail">Imagen del recurso</string>
     <string name="cd_img_card">Miniatura del recurso</string>
+
+    <string name="cd_fav">Agregar a favoritos</string>
+
+    <string name="hint_search">Buscar por ID, titulo, tipo</string>
+
+    <string name="chip_favs">Favoritos</string>
+
+    <string name="label_rating">Calificación</string>
+
+    <string name="btn_calificar">Calificar</string>
+
+    <string name="chip_todos">Todos</string>
+
+    <string name="msg_rating_empty">Selecciona una calificación</string>
+
+    <string name="msg_rating_ok">¡Gracias por calificar!</string>
+
+    <string name="msg_login_ok">Bienvenido</string>
+
+    <string name="cd_logo_app">Logo de AprendeApp</string>
 
 </resources>

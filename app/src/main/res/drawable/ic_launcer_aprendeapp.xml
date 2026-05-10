@@ -1,0 +1,78 @@
+<!-- res/drawable/ic_aprende_app.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Fondo -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M16,16h76a8,8 0 0 1 8,8v60a8,8 0 0 1 -8,8H16a8,8 0 0 1 -8,-8V24a8,8 0 0 1 8,-8z"/>
+
+    <!-- Libro -->
+    <path
+        android:fillColor="#1A2D44"
+        android:pathData="M26,68
+            Q40,58 54,68
+            Q68,58 82,68
+            L82,74
+            Q68,64 54,74
+            Q40,64 26,74Z"/>
+
+    <path
+        android:fillColor="#1A2D44"
+        android:pathData="M28,58
+            Q41,49 54,58
+            Q67,49 80,58
+            L80,63
+            Q67,54 54,63
+            Q41,54 28,63Z"/>
+
+    <!-- Bombilla -->
+    <path
+        android:fillColor="#2ECC71"
+        android:pathData="M54,22
+            A16,16 0 1,1 38,38
+            A16,16 0 0,1 54,22Z"/>
+
+    <!-- Play -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M50,32 L50,44 L61,38 Z"/>
+
+    <!-- Base bombilla -->
+    <path
+        android:fillColor="#1A2D44"
+        android:pathData="M48,48h12v4h-12z"/>
+
+    <path
+        android:fillColor="#1A2D44"
+        android:pathData="M49,53h10v3h-10z"/>
+
+    <!-- Rayos -->
+    <path
+        android:strokeWidth="3"
+        android:strokeColor="#2ECC71"
+        android:pathData="M54,14 L54,8"/>
+
+    <path
+        android:strokeWidth="3"
+        android:strokeColor="#2ECC71"
+        android:pathData="M39,19 L34,14"/>
+
+    <path
+        android:strokeWidth="3"
+        android:strokeColor="#2ECC71"
+        android:pathData="M69,19 L74,14"/>
+
+    <path
+        android:strokeWidth="3"
+        android:strokeColor="#2ECC71"
+        android:pathData="M32,38 L26,38"/>
+
+    <path
+        android:strokeWidth="3"
+        android:strokeColor="#2ECC71"
+        android:pathData="M76,38 L82,38"/>
+</vector>

@@ -7,6 +7,7 @@
     android:layout_margin="@dimen/ui_gap"
     card_view:cardCornerRadius="@dimen/ui_radius"
     card_view:cardElevation="4dp"
+    android:fitsSystemWindows="true"
     card_view:cardBackgroundColor="@color/ui_white">
 
     <LinearLayout
@@ -19,7 +20,8 @@
             android:id="@+id/imgRes"
             android:layout_width="@dimen/ui_img_card"
             android:layout_height="@dimen/ui_img_card"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/cd_img_card" />
 
         <Space
             android:layout_width="@dimen/ui_gap"
@@ -37,9 +39,7 @@
                 android:layout_height="wrap_content"
                 style="@style/UiSubtitle" />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="6dp" />
+            <Space android:layout_width="match_parent" android:layout_height="4dp" />
 
             <TextView
                 android:id="@+id/tvDesc"
@@ -48,18 +48,38 @@
                 android:maxLines="2"
                 style="@style/UiBody" />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="6dp" />
+            <Space android:layout_width="match_parent" android:layout_height="4dp" />
 
             <TextView
                 android:id="@+id/tvTipo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/ui_primary"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textSize="12sp" />
+
+            <Space android:layout_width="match_parent" android:layout_height="4dp" />
+
+            <RatingBar
+                android:id="@+id/rbRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:attr/ratingBarStyleSmall"
+                android:numStars="5"
+                android:stepSize="0.5"
+                android:isIndicator="true"
+                android:rating="0" />
 
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivFav"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center_vertical"
+            android:padding="4dp"
+            android:src="@drawable/ic_fav_outline"
+            android:contentDescription="@string/cd_fav" />
 
     </LinearLayout>
 

@@ -6,7 +6,15 @@
     android:background="@color/ui_bg"
     android:gravity="center"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     android:padding="@dimen/ui_padding">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_launcer_aprendeapp"
+        android:contentDescription="@string/cd_logo_app" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -56,5 +64,12 @@
         android:layout_height="wrap_content"
         android:text="@string/btn_regi"
         style="@style/UiButtonAlt" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="center" />
 
 </LinearLayout>
